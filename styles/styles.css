@@ -3,9 +3,12 @@
 :root {
   --color-bg: #222831;
   --color-article-bg: #30475e;
-  --color-bkpk-bg: #f4a41d;
-  --color-bkpk-red: #7c1541;
-  --color-link-hover: #ffeb99;
+  --color-bastion-red-orange: #f85523;
+  --color-bastion-tomato: #f46c51;
+  --color-bastion-midnight-blue: #0b1d74;
+  --color-bastion-bdazzled-blue: #485c87;
+  --color-bastion-cornflower-blue: #7b9eff;
+  --color-bastion-blue-ryb: #3350de;
   --font-family-headers: Poppins, sans-serif;
   --font-family-content: Montserrat, sans-serif;
   --font-family-code: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -46,11 +49,11 @@ a {
 }
 
 a:hover {
-  color: var(--color-link-hover);
+  color: var(--color-bastion-tomato);
 }
 
 body {
-  background-color: var(--color-bg);
+  background-color: var(--color-bastion-bdazzled-blue);
   color: white;
   display: grid;
   grid-template-areas:
@@ -63,20 +66,19 @@ body {
 
 #page-header p {
   max-width: 550px;
-  width: 60%;
-  margin: 10px auto;
+  width: 75%;
+  margin: 20px auto;
 }
 
-
 aside {
-  background-color: var(--color-bg);
+  background-color: var(--color-bastion-bdazzled-blue);
   grid-area: sidebar;
   position: sticky;
   top: 0;
 }
 
 #photo-of-me {
-  border: 5px solid var(--color-article-bg);
+  border: 5px solid var(--color-bg);
   border-radius: 50%;
   height: 300px;
 }
@@ -94,7 +96,7 @@ aside {
 }
 
 .nav-icons img:hover {
-  filter: brightness(0) saturate(100%) invert(83%) sepia(50%) saturate(320%) hue-rotate(349deg) brightness(104%) contrast(101%);
+  filter: invert(11%) sepia(11%) saturate(1332%) hue-rotate(177deg) brightness(96%) contrast(89%);
 }
 
 main h2 {
@@ -102,21 +104,19 @@ main h2 {
 }
 
 main article {
-  background-color: var(--color-article-bg);
+  background-color: var(--color-bg);
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
-  grid-template-columns: minmax(75px, 175px) 1fr;
   grid-template-areas: 
-    "article-header article-content";
+    "article-header article-content article-content";
   display: grid;
   gap: 0 30px;
 }
 
 article h2 {
   font-size: 3.75rem;
-  font-family: var(--font-bkbk-headers);
-  text-transform: lowercase;
+  font-family: var(--font-family-headers);
   letter-spacing: 2px;
 }
 
@@ -125,16 +125,14 @@ article img {
   max-width: 175px;
 }
 
-#bkpk-logo {
-  background-color: var(--color-bkpk-bg);
-}
-
 article header {
   grid-area: article-header;
+  justify-self: center;
 }
 
 article .content {
   grid-area: article-content;
+  align-self: center;
 }
 
 article .content .button {
@@ -145,23 +143,24 @@ article .content .button {
   text-align: left;
 }
 
-.content ul li + li {
-  margin-top: 10px;
+.content ul li {
+  margin-bottom: 22px;
 }
 
 .button { 
   display: inline-block;
   border: none;
   border-radius: 5px;
-  background-color: var(--color-bkpk-red);
+  background-color: var(--color-bastion-blue-ryb);
   color: white;
   margin-top: 15px;
   padding: 5px 10px
 }
 
 .button:hover {
-  color: var(--color-bkpk-red);
-  background-color: var(--color-bkpk-bg);
+  color: var(--color-bastion-midnight-blue);
+  font-weight: 900;
+  background-color: var(--color-bastion-red-orange);
   transition: .25s;
 }
 
