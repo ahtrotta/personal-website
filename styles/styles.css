@@ -1,12 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lora:wght@400;500&display=swap');
-
 :root {
   --color-dark: #222831;
-  --color-bastion-midnight-blue: #0b1d74;
   --color-bastion-bdazzled-blue: #485c87;
   --color-beige: #ffe5ba;
   --color-brown: #cc8b4e;
-  --font-family-headers: Poppins, sans-serif;
   --font-family-content: Helvetica, Arial, sans-serif;
 }
 
@@ -19,8 +15,8 @@ html {
   box-sizing: inherit;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-family-headers);
+*:hover {
+  transition: 0.35s;
 }
 
 h1 {
@@ -51,7 +47,14 @@ p, li, a {
 a {
   text-decoration: none;
   color: inherit;
-  transition: .25s;
+}
+
+li {
+  margin: 22px;
+}
+
+ul {
+  max-width: 970px;
 }
 
 body {
@@ -67,18 +70,18 @@ body {
   text-align: center;
 }
 
-#page-header p {
-  max-width: 550px;
-  width: 75%;
-  margin: 20px auto;
-}
-
 aside {
   background-color: var(--color-bastion-bdazzled-blue);
   grid-area: navbar;
   position: sticky;
   top: 0;
   margin-bottom: 40px;
+}
+
+#page-header p {
+  max-width: 550px;
+  width: 75%;
+  margin: 20px auto;
 }
 
 #photo-of-me {
@@ -132,7 +135,6 @@ article h1 {
 
 article h1 a {
   font-size: 3.85rem;
-  font-family: var(--font-family-headers);
 }
 
 article h1 a:hover {
@@ -201,6 +203,8 @@ article .bastion-video {
 article iframe {
   width: 560px;
   height: 315px;
+  border: 3px solid var(--color-bastion-bdazzled-blue);
+  border-radius: 20px;
 }
 
 article .button {
@@ -220,14 +224,6 @@ article .button {
   justify-content: center;
 }
 
-li {
-  margin: 22px;
-}
-
-ul {
-  max-width: 970px;
-}
-
 .button a { 
   display: inline-block;
   border: none;
@@ -241,7 +237,6 @@ ul {
 .button a:hover {
   color: #fff;
   background-color: var(--color-brown);
-  transition: .25s;
 }
 
 .other-work img {
