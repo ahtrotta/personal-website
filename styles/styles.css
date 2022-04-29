@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Lora:wght@400;500&display=swap');
 
 :root {
   --color-bg: #222831;
@@ -9,8 +9,12 @@
   --color-bastion-bdazzled-blue: #485c87;
   --color-bastion-cornflower-blue: #7b9eff;
   --color-bastion-blue-ryb: #3350de;
+  --color-cornflower-complement-a: #704ecc;
+  --color-cornflower-complement-b: #8c8799;
+  --color-cornflower-complement-d: #ffe5ba;
+  --color-cornflower-complement-e: #cc8b4e;
   --font-family-headers: Poppins, sans-serif;
-  --font-family-content: Montserrat, sans-serif;
+  --font-family-content: Helvetica, Arial, serif;
   --font-family-code: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
@@ -32,6 +36,10 @@ h1 {
   margin-top: 15px;
 }
 
+header h1 {
+  margin: 25px 0 55px 0;
+}
+
 h2 {
   font-size: 3rem;
   line-height: 5rem;
@@ -39,7 +47,8 @@ h2 {
 
 p, li, a {
   font-weight: 500;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
 }
 
 a {
@@ -54,11 +63,11 @@ a:hover {
 
 body {
   background-color: var(--color-bastion-bdazzled-blue);
-  color: white;
+  color: var(--color-cornflower-complement-d);
   display: grid;
   grid-template-areas:
-    "header"
     "sidebar"
+    "header"
     "main";
   padding: 50px 0;
   text-align: center;
@@ -75,10 +84,11 @@ aside {
   grid-area: sidebar;
   position: sticky;
   top: 0;
+  margin-bottom: 40px;
 }
 
 #photo-of-me {
-  border: 5px solid var(--color-bg);
+  border: 5px solid var(--color-cornflower-complement-e);
   border-radius: 50%;
   height: 300px;
 }
@@ -96,7 +106,7 @@ aside {
 }
 
 .nav-icons img:hover {
-  filter: invert(11%) sepia(11%) saturate(1332%) hue-rotate(177deg) brightness(96%) contrast(89%);
+  filter: invert(56%) sepia(22%) saturate(999%) hue-rotate(348deg) brightness(100%) contrast(92%);
 }
 
 main h2 {
@@ -104,14 +114,21 @@ main h2 {
 }
 
 main article {
-  background-color: var(--color-bg);
-  max-width: 1300px;
+  background-color: var(--color-cornflower-complement-d); 
+}
+
+main .bastion-grid {
+  color: var(--color-bg);
+  max-width: 1500px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 40px;
   grid-template-areas: 
-    "article-header article-content article-content";
+    "article-header article-content article-content article-content"
+    "bastion-overview bastion-overview bastion-overview-image bastion-overview-image"
+    "admin-dashboard-image admin-dashboard-image bastion-video bastion-video";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   display: grid;
-  gap: 0 30px;
+  gap: 30px 10px;
 }
 
 article h2 {
@@ -121,13 +138,22 @@ article h2 {
 }
 
 article img {
-  width: 100%;
-  max-width: 175px;
+  width: 85%;
 }
 
 article header {
   grid-area: article-header;
   justify-self: center;
+  align-self: center;
+}
+
+article img {
+  border-radius: 20px;
+  border: 5px solid var(--color-bastion-bdazzled-blue);
+}
+
+article img:hover {
+  border: 5px solid var(--color-cornflower-complement-e);
 }
 
 article .content {
@@ -135,32 +161,72 @@ article .content {
   align-self: center;
 }
 
-article .content .button {
-  display: inline-block;
+article .bastion-overview-image {
+  grid-area: bastion-overview-image;
 }
 
-.content {
+article .bastion-overview-image img {
+  padding: 10px;
+}
+
+article img {
+  background-color: #fff;
+}
+
+article .bastion-overview {
+  grid-area: bastion-overview;
+  align-self: center;
+}
+
+article .admin-dashboard-image {
+  grid-area: admin-dashboard-image;
+  margin: 40px 0;
+}
+
+article .bastion-video {
+  grid-area: bastion-video;
+  align-self: center;
+  margin: 40px 0;
+}
+
+article .button {
+  display: inline-block;
+  align-self: center;
+  padding-right: 35px;
+  padding-top: 20px;
+}
+
+.content, .bastion-overview {
   text-align: left;
 }
 
-.content ul li {
-  margin-bottom: 22px;
+.bastion-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.button { 
+li {
+  margin: 22px;
+}
+
+ul {
+  max-width: 970px;
+}
+
+.button a { 
   display: inline-block;
   border: none;
   border-radius: 5px;
-  background-color: var(--color-bastion-blue-ryb);
+  background-color: var(--color-bastion-bdazzled-blue);
   color: white;
-  margin-top: 15px;
-  padding: 5px 10px
+  margin: 15px 22px;
+  padding: 7px 10px
 }
 
-.button:hover {
-  color: var(--color-bastion-midnight-blue);
-  font-weight: 900;
-  background-color: var(--color-bastion-red-orange);
+.button a:hover {
+  color: #fff;
+  background-color: var(--color-cornflower-complement-e);
   transition: .25s;
 }
 
