@@ -149,6 +149,7 @@ article header {
   grid-area: article-header;
   justify-self: center;
   align-self: center;
+  width: 100%;
 }
 
 article header img {
